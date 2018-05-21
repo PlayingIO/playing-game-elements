@@ -1,0 +1,86 @@
+<!--
+`playing-game-metadata-layout`
+@group Playing UI
+@element playing-game-metadata-layout
+-->
+<dom-module id="playing-game-metadata-layout">
+
+  <template>
+    <style include="mostly-styles playing-styles">
+      :host {
+        display: block;
+      }
+    </style>
+  
+    <div role="widget">
+      <label>[[i18n('label.dublincore.title')]]</label>
+      <div name="title">[[document.title]]</div>
+    </div>
+
+    <div role="widget" hidden$="[[!document.description]]">
+      <label>[[i18n('label.dublincore.description')]]</label>
+      <div name="description" class="multiline">[[document.description]]</div>
+    </div>
+
+    <div role="widget">
+      <label>[[i18n('noteMetadataLayout.format')]]</label>
+      <div>[[formatMimeType(document.mimetype)]]</div>
+    </div>
+    
+    <div role="widget" hidden$="[[!document.genre]]">
+      <label>[[i18n('label.book.genre')]]</label>
+      <div name="category">[[formatDirectory(document.genre)]]</div>
+    </div>
+
+    <div role="widget" hidden$="[[!document.category]]">
+      <label>[[i18n('label.book.category')]]</label>
+      <div name="category">[[formatDirectory(document.category)]]</div>
+    </div>
+
+    <playing-vocabulary-suggestion role="widget"
+            label="[[i18n('label.book.levels')]]"
+            vocabulary-name="level"
+            name="levels"
+            value="{{document.levels}}"
+            hidden$="[[!document.levels.length]]"
+            multiple="true"
+            dbl10n="true"
+            readonly>
+    </playing-vocabulary-suggestion>
+
+    <div role="widget" hidden$="[[!document.practiceQuestion]]">
+      <label>[[i18n('label.book.practiceQuestion')]]</label>
+      <div name="practiceQuestion" class="multiline">[[document.practiceQuestion]]</div>
+    </div>
+
+    <div role="widget" hidden$="[[!document.reviseQuestion]]">
+      <label>[[i18n('label.book.reviseQuestion')]]</label>
+      <div name="reviseQuestion" class="multiline">[[document.reviseQuestion]]</div>
+    </div>
+
+    <div role="widget" hidden$="[[!document.links]]">
+      <label>[[i18n('label.book.links')]]</label>
+      <div name="links" class="multiline">[[document.links]]</div>
+    </div>
+
+    <div role="widget" hidden$="[[!document.footnotes]]">
+      <label>[[i18n('label.book.footnotes')]]</label>
+      <div name="footnotes" class="multiline">[[document.footnotes]]</div>
+    </div>
+        
+  </template>
+
+  <script>
+    Polymer({
+      is: 'playing-game-metadata-layout',
+      behaviors: [Mostly.LayoutBehavior],
+      properties: {
+        /**
+         * @doctype Note
+         */
+        document: Object
+      }
+    });
+  </script>
+
+</dom-module>

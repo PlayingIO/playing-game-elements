@@ -1,0 +1,31 @@
+<!--
+`playing-game-view-layout`
+@group Playing UI
+@element playing-game-view-layout
+-->
+<dom-module id="playing-game-view-layout">
+
+  <template>
+    <style>
+      playing-content-editor {
+        @apply --paper-card;
+      }
+    </style>
+
+    <playing-content-editor role="widget" document="[[document]]" type="game"></playing-content-editor>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'playing-game-view-layout',
+      behaviors: [Mostly.LayoutBehavior],
+      properties: {
+        /**
+         * @doctype game
+         */
+        document: Object
+      }
+    });
+  </script>
+
+</dom-module>
