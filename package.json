@@ -1,6 +1,6 @@
 {
   "name": "playing-game-elements",
-  "description": "Game management web components for playful applications",
+  "description": "Game management web components for building playful applications",
   "version": "1.0.1",
   "license": "MIT",
   "devDependencies": {

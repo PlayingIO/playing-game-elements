@@ -1,7 +1,7 @@
 Playing Game Components
 =============================
 
-Game management web components for playful applications.
+Game management web components for building playful applications.
 
 # Usage
 
