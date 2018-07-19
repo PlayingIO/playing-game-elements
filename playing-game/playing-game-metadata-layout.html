@@ -11,7 +11,7 @@
         display: block;
       }
     </style>
-  
+
     <div role="widget">
       <label>[[i18n('label.dublincore.title')]]</label>
       <div name="title">[[document.title]]</div>
@@ -26,7 +26,7 @@
       <label>[[i18n('noteMetadataLayout.format')]]</label>
       <div>[[formatMimeType(document.mimetype)]]</div>
     </div>
-    
+
     <div role="widget" hidden$="[[!document.genre]]">
       <label>[[i18n('label.book.genre')]]</label>
       <div name="category">[[formatVocabulary(document.genre)]]</div>
@@ -67,7 +67,7 @@
       <label>[[i18n('label.book.footnotes')]]</label>
       <div name="footnotes" class="multiline">[[document.footnotes]]</div>
     </div>
-        
+
   </template>
 
   <script>
